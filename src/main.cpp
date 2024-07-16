@@ -26,9 +26,10 @@ class $modify(PlayLayer) {
 		}
 
 		// https://stackoverflow.com/a/58697497/20616402
-		auto timeString = fmt::format("{}.{}", std::format("{:%T}", std::chrono::round<std::chrono::seconds>(
+		auto _timeStr = std::format("{:%T}", std::chrono::round<std::chrono::seconds>(
 			std::chrono::duration<int>{p0}
-		)), msStr);
+		));
+		auto timeString = fmt::format("{}.{}", _timeStr, msStr);
 		m_percentageLabel->setString(
 			timeString.c_str()
 		);

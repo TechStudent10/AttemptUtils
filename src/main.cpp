@@ -2,6 +2,8 @@
 #include <Geode/modify/PlayLayer.hpp>
 #include <Geode/modify/LevelInfoLayer.hpp>
 
+#include <fmt/chrono.h>
+
 using namespace geode::prelude;
 
 class $modify(PlayLayer) {
@@ -26,10 +28,14 @@ class $modify(PlayLayer) {
 		}
 
 		// https://stackoverflow.com/a/58697497/20616402
-		auto _timeStr = std::format("{:%T}", std::chrono::round<std::chrono::seconds>(
-			std::chrono::duration<int>{p0}
-		));
-		auto timeString = fmt::format("{}.{}", _timeStr, msStr);
+		// auto _timeStr = std::format("{:%T}", std::chrono::round<std::chrono::seconds>(
+		// 	std::chrono::duration<int>{p0}
+		// ));
+		
+		using namespace std::literals::chrono_literals;
+
+		auto duration = std::chrono::duration<int>{p0};
+		auto timeString = fmt::format("{:%H:%M:%S}.{}", duration, msStr);
 		m_percentageLabel->setString(
 			timeString.c_str()
 		);

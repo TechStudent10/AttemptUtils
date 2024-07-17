@@ -8,8 +8,8 @@ using namespace geode::prelude;
 
 class $modify(PlayLayer) {
 	void updateAttempts() {
+		PlayLayer::updateAttempts();
 		if (!Mod::get()->getSettingValue<bool>("total-attempts")) {
-			PlayLayer::updateAttempts();
 			return;
 		}
 		m_attemptLabel->setString(
@@ -49,6 +49,9 @@ class $modify(PlayLayer) {
 class $modify(MyInfoLayer, LevelInfoLayer) {
 	void onLevelInfo(CCObject* sender) {
 		LevelInfoLayer::onLevelInfo(sender);
+		if (!Mod::get()->getSettingValue<bool>("reset-att")) {
+			return;
+		}
 		auto btnSprite = ButtonSprite::create("Reset Attempts", "bigFont.fnt", "GJ_button_01.png");
 		btnSprite->setScale(0.65f);
 		auto btn = CCMenuItemSpriteExtra::create(

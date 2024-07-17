@@ -8,7 +8,7 @@
 	},
 	"id": "techstudent10.attempt_utils",
 	"name": "Attempt Utilities",
-	"version": "v1.1.0",
+	"version": "v1.1.1",
 	"developer": "TechStudent10",
 	"description": "Utilities pertaining to attempts, percents, and more!",
 	"settings": {
@@ -23,6 +23,12 @@
 			"default": true,
 			"name": "Formatted Plat. Time",
 			"description": "Shows time in platformer in the HH:MM:SS.MS format in game"
+		},
+		"reset-att": {
+			"type": "bool",
+			"default": true,
+			"name": "Reset Attempt Button",
+			"description": "Shows the reset attempt button underneath the info panel on online levels"
 		}
 	},
 	"repository": "https://github.com/TechStudent10/AttemptUtils",

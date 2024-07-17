@@ -22,15 +22,15 @@ class $modify(PlayLayer) {
 			PlayLayer::updateTimeLabel(p0, p1, p2);
 			return;
 		}
+		if (!m_level->isPlatformer()) {
+			return;
+		}
 		auto msStr = std::to_string(p1);
 		if (msStr.length() == 1) {
 			msStr = fmt::format("0{}", p1);
 		}
 
 		// https://stackoverflow.com/a/58697497/20616402
-		// auto _timeStr = std::format("{:%T}", std::chrono::round<std::chrono::seconds>(
-		// 	std::chrono::duration<int>{p0}
-		// ));
 		
 		using namespace std::literals::chrono_literals;
 

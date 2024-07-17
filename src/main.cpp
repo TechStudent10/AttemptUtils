@@ -7,6 +7,16 @@
 using namespace geode::prelude;
 
 class $modify(PlayLayer) {
+	// TODO: removed in rel
+	bool init(GJGameLevel* a, bool b, bool c) {
+		PlayLayer::init(a, b, c);
+
+		m_attemptTime = 3555;
+		m_timePlayed = 3555;
+
+		return true;
+	}
+
 	void updateAttempts() {
 		PlayLayer::updateAttempts();
 		if (!Mod::get()->getSettingValue<bool>("total-attempts")) {
@@ -35,7 +45,13 @@ class $modify(PlayLayer) {
 		using namespace std::literals::chrono_literals;
 
 		auto duration = std::chrono::duration<int>{p0};
-		auto timeString = fmt::format("{:%H:%M:%S}.{}", duration, msStr);
+		auto timeString = fmt::format("{:%S}.{}", duration, msStr);
+
+		if (m_timePlayed >= 3600) {
+			timeString = fmt::format("{:%H:%M:%S}.{}", duration, msStr);
+		} else if (m_timePlayed >= 60) {
+			timeString = fmt::format("{:%M:%S}.{}", duration, msStr);
+		}
 		m_percentageLabel->setString(
 			timeString.c_str()
 		);

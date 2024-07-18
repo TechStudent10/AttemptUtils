@@ -6,17 +6,15 @@
 
 using namespace geode::prelude;
 
+// might use in the future
+float distanceBetweenPoints(CCPoint a, CCPoint b) {
+	// Calculates the distance between two CCPoints
+	auto dx = pow(b.x - a.x, 2);
+	auto dy = pow(b.y - b.x, 2);
+	return sqrtf(dx + dy);
+}
+
 class $modify(PlayLayer) {
-	// TODO: removed in rel
-	bool init(GJGameLevel* a, bool b, bool c) {
-		PlayLayer::init(a, b, c);
-
-		m_attemptTime = 3555;
-		m_timePlayed = 3555;
-
-		return true;
-	}
-
 	void updateAttempts() {
 		PlayLayer::updateAttempts();
 		if (!Mod::get()->getSettingValue<bool>("total-attempts")) {

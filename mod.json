@@ -1,16 +1,16 @@
 {
-	"geode": "3.2.0",
+	"geode": "4.0.0-alpha.1",
 	"gd": {
-		"win": "2.206",
-		"android": "2.206",
-		"mac": "2.206",
-		"ios": "2.206"
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
 	},
 	"id": "techstudent10.attempt_utils",
 	"name": "Attempt Utilities",
 	"version": "v1.2.0",
 	"developer": "TechStudent10",
-	"description": "Utilities pertaining to attempts, percents, and more!",
+	"description": "Utils for attempts, percents, and more!",
 	"settings": {
 		"total-attempts": {
 			"type": "bool",
@@ -31,10 +31,12 @@
 			"description": "Shows the reset attempt button underneath the info panel on online levels"
 		}
 	},
-	"repository": "https://github.com/TechStudent10/AttemptUtils",
 	"issues": {
 		"url": "https://github.com/TechStudent10/AttemptUtils/issues",
 		"info": "Submit your issues in the GitHub repo"
+	},
+	"links": {
+		"source": "https://github.com/TechStudent10/AttemptUtils"
 	},
 	"tags": [
 		"enhancement",

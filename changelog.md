@@ -1,3 +1,6 @@
+# 1.3.0 and 1.3.1
+- Port to Geode v4 and GD 2.2074
+
 # 1.2.0
 - Remove unnessesary orders of magnitude in formatted platformer time
 

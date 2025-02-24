@@ -1,5 +1,5 @@
 {
-	"geode": "4.0.1",
+	"geode": "4.2.0",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -8,7 +8,7 @@
 	},
 	"id": "techstudent10.attempt_utils",
 	"name": "Attempt Utilities",
-	"version": "v1.3.1",
+	"version": "v1.3.2",
 	"developer": "TechStudent10",
 	"description": "Utils for attempts, percents, and more!",
 	"settings": {

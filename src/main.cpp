@@ -46,7 +46,8 @@ class $modify(PlayLayer) {
 		auto timeString = fmt::format("{:%S}.{}", duration, msStr);
 
 		if (m_timePlayed >= 3600) {
-			timeString = fmt::format("{:%H:%M:%S}.{}", duration, msStr);
+			auto hours = std::chrono::duration_cast<std::chrono::hours>(duration);
+			timeString = fmt::format("{}:{:%M:%S}.{}", hours.count(), duration, msStr);
 		} else if (m_timePlayed >= 60) {
 			timeString = fmt::format("{:%M:%S}.{}", duration, msStr);
 		}
